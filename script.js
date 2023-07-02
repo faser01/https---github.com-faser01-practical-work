@@ -1,9 +1,14 @@
 class MyArray {
-    constructor() {
-      // Инициализация пустого массива и свойства birthday как текущую дату
-      this.arr = [];
-      this.birthday = new Date();
+  constructor() {
+    // Инициализация пустого массива и свойства birthday как текущую дату
+    this.arr = [];
+    let birthday = new Date();
+    
+    // Приватное поле birthday
+    this.getBirthday = function() {
+      return birthday;
     }
+  }
   
     getString(separator) {
       // Объединение элементов массива в строку с использованием разделителя
