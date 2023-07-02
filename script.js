@@ -48,13 +48,14 @@ class MyArray {
 const extendedArray = new MyArray();
 extendedArray.arr = [9, 1, 8, 5, 3, 7, 15, 54, 27, 6];
 
-console.log('Вывод строки, полученной из объединения элементов массива с разделителем ","\n', extendedArray.getString(', '));
-console.log('Вывод строки, содержащей элементы массива в формате HTML с использованием тегов \n', extendedArray.getHtml(true));
+const outputElement = document.getElementById('output');
+outputElement.innerHTML = 'Вывод строки, полученной из объединения элементов массива с разделителем ",": ' + extendedArray.getString(', ') + '<br>';
+outputElement.innerHTML += 'Вывод строки, содержащей элементы массива в формате HTML с использованием тегов (нумерованный список): ' + extendedArray.getHtml(true) + '<br>';
+outputElement.innerHTML += 'Вывод строки, содержащей элементы массива в формате HTML с использованием тегов (маркированный список): ' + extendedArray.getHtml(false) + '<br>';
 
 extendedArray.sort();
 
-console.log('Вывод строки, полученной из объединения отсортированных элементов массива с разделителем ","\n', extendedArray.getString(', '));
-
+outputElement.innerHTML += 'Вывод строки, полученной из объединения отсортированных элементов массива с разделителем ",": ' + extendedArray.getString(', ') + '<br>';
 class Person {
   constructor(name, dateOfBirth, address) {
     this.name = name;
